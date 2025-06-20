@@ -1,0 +1,40 @@
+{
+  "name": "PySpark Development",
+  "dockerComposeFile": "../docker-compose.yml",
+  "service": "spark-jupyter",
+  "workspaceFolder": "/workspace",
+  "shutdownAction": "stopCompose",
+  
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-python.pylint",
+        "ms-toolsai.jupyter",
+        "ms-python.black-formatter"
+      ],
+      "settings": {
+        "python.defaultInterpreterPath": "/usr/bin/python3",
+        "python.linting.enabled": true,
+        "python.linting.pylintEnabled": true,
+        "python.formatting.provider": "black"
+      }
+    }
+  },
+  
+  "forwardPorts": [8888, 4040, 8080, 7077],
+  "portsAttributes": {
+    "8888": {
+      "label": "Jupyter Lab",
+      "onAutoForward": "openBrowser"
+    },
+    "4040": {
+      "label": "Spark Application UI"
+    },
+    "8080": {
+      "label": "Spark Master UI"
+    }
+  },
+  
+  "postCreateCommand": "pip install --user ipykernel && python -m ipykernel install --user --name=pyspark"
+}

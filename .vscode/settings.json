@@ -1,0 +1,16 @@
+{
+    "python.defaultInterpreterPath": "/usr/bin/python3",
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": true,
+    "python.formatting.provider": "black",
+    "python.formatting.blackArgs": ["--line-length", "88"],
+    "python.linting.pylintArgs": [
+        "--disable=C0114,C0115,C0116",
+        "--extension-pkg-whitelist=pyspark"
+    ],
+    "files.associations": {
+        "*.py": "python"
+    },
+    "python.terminal.activateEnvironment": false,
+    "jupyter.defaultKernel": "pyspark"
+}

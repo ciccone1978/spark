@@ -1,0 +1,33 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "env": {
+                "PYTHONPATH": "/opt/spark/python:/opt/spark/python/lib/py4j-0.10.9.7-src.zip",
+                "SPARK_HOME": "/opt/spark",
+                "PYSPARK_PYTHON": "python3"
+            },
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "name": "PySpark: Debug Script",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "env": {
+                "PYTHONPATH": "/opt/spark/python:/opt/spark/python/lib/py4j-0.10.9.7-src.zip",
+                "SPARK_HOME": "/opt/spark",
+                "PYSPARK_PYTHON": "python3",
+                "PYSPARK_DRIVER_PYTHON": "python3"
+            },
+            "args": [],
+            "justMyCode": false
+        }
+    ]
+}
