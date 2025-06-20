@@ -63,6 +63,8 @@ RUN pip3 install --no-cache-dir \
     s3fs \
     minio \
     requests \
+    wget \
+    tqdm \
     sqlalchemy \
     psycopg2-binary \
     pylint \
